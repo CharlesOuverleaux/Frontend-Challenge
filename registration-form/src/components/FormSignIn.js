@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './FormSignIn.css';
 
 export default function FormSignIn() {
   const [values, setValues] = useState({
@@ -27,13 +28,6 @@ export default function FormSignIn() {
   }
 
   let validity = false;
-
-  // logic
-  // 8 or more characters X
-  // 1 or more lowercase letters X
-  // 1 or more uppercase letters X
-  // 1 or more decimal characters X
-  // 1 or more special characters X
 
   let pwd = values.password.trim();
   if (pwd.length >= 8) {
@@ -76,9 +70,8 @@ export default function FormSignIn() {
   return (
     <div className='FormSignIn'>
       <form onSubmit={handleSubmit}>
-        <div className="form-email">
-          <label htmlFor="email">Email</label>
-          {/* added to highlight on label click */}
+        <label htmlFor="email">Email
+        {/* added to highlight on label click */}
           <input
             type="email"
             name="email"
@@ -88,9 +81,8 @@ export default function FormSignIn() {
             values={values.email}
             onChange={handleChange}
           />
-        </div>
-        <div className="form-password">
-          <label htmlFor="password">Password</label>
+        </label>
+        <label htmlFor="password">Password
           <input
             type="password"
             name="password"
@@ -100,7 +92,7 @@ export default function FormSignIn() {
             values={values.password}
             onChange={handleChange}
           />
-        </div>
+        </label>
         {/* replace by favicons */}
         <div className="form-validations">
           <p>{validations.characterscount ? "✔️" : "❌"} 8+ characters</p>
@@ -108,11 +100,8 @@ export default function FormSignIn() {
           <p>{validations.uppercase ? "✔️" : "❌"} uppercase letter</p>
           <p>{validations.decimal ? "✔️" : "❌"} number</p>
           <p>{validations.special ? "✔️" : "❌"} special character</p>
-          <p>{validity ? "✔️" : "❌"} All valid</p>
         </div>
-        <div className="form-submit">
-          <input type="submit" value="Submit" />
-        </div>
+        <input className="form-submit" type="submit" value="Submit" />
       </form>
     </div>
   );
