@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function FormSignIn() {
+  const [values, setValues] = useState({
+    email: '',
+    password: '',
+  });
+
+  const handleChange = evt => {
+    setValues({
+      ...values,
+      [evt.target.name]: evt.target.value
+    })
+  }
+
+  const handleSubmit = evt => {
+    evt.preventDefault();
+    console.log("Submitting");
+  }
+
   return (
     <div className='FormSignIn'>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="form-email">
           <label htmlFor="email">Email</label>
           {/* added to highlight on label click */}
@@ -13,6 +30,8 @@ export default function FormSignIn() {
             placeholder="test@test.de"
             id="email"
             required
+            values={values.email}
+            onChange={handleChange}
           />
         </div>
         <div className="form-password">
@@ -23,6 +42,8 @@ export default function FormSignIn() {
             placeholder="********"
             id="password"
             required
+            values={values.password}
+            onChange={handleChange}
           />
         </div>
         <div className="form-submit">
