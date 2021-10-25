@@ -1,9 +1,12 @@
 import './App.css';
+import Form from './components/Form';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
     <div className="App">
-      <h1>My App</h1>
+      <NavBar />
+      <Form />
     </div>
   );
 }
