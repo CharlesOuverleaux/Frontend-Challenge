@@ -1,23 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import './FormSignIn.css';
+import useSignInForm from "../hooks/useSignInForm";
 
 export default function FormSignIn() {
-  const [values, setValues] = useState({
-    email: '',
-    password: '',
-  });
-
-  const handleChange = evt => {
-    setValues({
-      ...values,
-      [evt.target.name]: evt.target.value
-    })
-  }
-
-  const handleSubmit = evt => {
-    evt.preventDefault();
-    console.log("Submitting");
-  }
+  const { values, handleChange, handleSubmit } = useSignInForm();
 
   let validations = {
     characterscount: false,
@@ -31,27 +17,22 @@ export default function FormSignIn() {
 
   let pwd = values.password.trim();
   if (pwd.length >= 8) {
-    console.log("✅ Password long engouh")
     validations.characterscount = true;
   }
 
   if (/[a-z]/.test(pwd)) {
-    console.log("Password has a lowercase");
     validations.lowercase = true;
   }
 
   if (/[A-Z]/.test(pwd)) {
-    console.log("Password has a Uppercase");
     validations.uppercase = true;
   }
 
   if (/\d/.test(pwd)) {
-    console.log("Password has a Decimal");
     validations.decimal = true;
   }
 
   if (/\W/.test(pwd)) {
-    console.log("Password has a special Charachter");
     validations.special = true;
   }
 
@@ -101,7 +82,7 @@ export default function FormSignIn() {
           <p>{validations.decimal ? "✔️" : "❌"} number</p>
           <p>{validations.special ? "✔️" : "❌"} special character</p>
         </div>
-        <button class="form-submit" type="submit" value="Submit">Submit</button>
+        <button className="form-submit" type="submit" value="Submit">Submit</button>
       </form>
     </div>
   );
