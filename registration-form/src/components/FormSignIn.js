@@ -70,7 +70,7 @@ export default function FormSignIn() {
   return (
     <div className='FormSignIn'>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="email">Email
+        <label htmlFor="email" className='form-email'>Email
         {/* added to highlight on label click */}
           <input
             type="email"
@@ -82,7 +82,7 @@ export default function FormSignIn() {
             onChange={handleChange}
           />
         </label>
-        <label htmlFor="password">Password
+        <label htmlFor="password" className='form-password'>Password
           <input
             type="password"
             name="password"
@@ -101,7 +101,7 @@ export default function FormSignIn() {
           <p>{validations.decimal ? "✔️" : "❌"} number</p>
           <p>{validations.special ? "✔️" : "❌"} special character</p>
         </div>
-        <input className="form-submit" type="submit" value="Submit" />
+        <button class="form-submit" type="submit" value="Submit">Submit</button>
       </form>
     </div>
   );

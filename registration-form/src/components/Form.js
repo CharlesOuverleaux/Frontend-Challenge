@@ -4,7 +4,7 @@ import './Form.css';
 
 export default function Form() {
   return (
-    <div className='Form'>
+    <div className='Form-Container'>
       <FormSignIn />
     </div>
   );
