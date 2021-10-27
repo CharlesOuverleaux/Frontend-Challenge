@@ -4,7 +4,7 @@ import './NavBar.css';
 export default function NavBar() {
   return (
     <div id='NavBar'>
-      <p>Registration</p>
+      <p id='NavTitle'>Registration</p>
     </div>
   );
 }

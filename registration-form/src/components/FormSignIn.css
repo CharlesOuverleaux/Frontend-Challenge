@@ -32,3 +32,26 @@
   margin-top: 16px;
   border: none;
 }
+
+ @media only screen and (min-width: 768px) {
+  #FormSignIn {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 16px;
+  }
+  #email{
+    grid-column: 1;
+    grid-row: 1;
+  }
+  #password{
+    grid-column: 2;
+    grid-row: 1;
+  }
+  #FormValidations{
+    grid-column: 2;
+    grid-row: 2;
+  }
+  #FormSubmit {
+    grid-column: 2;
+    grid-row: 3;
+  }
+}
