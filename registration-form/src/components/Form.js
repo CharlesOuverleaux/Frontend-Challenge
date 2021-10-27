@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FormSignIn from "./FormSignIn";
 import './Form.css';
+import SuccessMessage from "./SuccessMessage";
 
 export default function Form() {
   const [isSubmitted, SetIsSubmitted] = useState(false);
@@ -9,10 +10,10 @@ export default function Form() {
     SetIsSubmitted(true);
   };
 
-  const successMsg = <h2 className='Success-Message'>Thank you! <br />You have signed in!</h2>
+
   return (
     <div className='Form-Container'>
-      { isSubmitted ? successMsg : <FormSignIn submitForm={submitForm}/> }
+      { isSubmitted ? <SuccessMessage /> : <FormSignIn submitForm={submitForm}/> }
     </div>
   );
 }

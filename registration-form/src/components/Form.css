@@ -1,10 +1,6 @@
 .Form-Container {
   font-size: 18px;
-  border: 2px solid #000000;
+  border: 2px solid black;
   width: 90%;
   margin: 0 auto;
-}
-
-.Success-Message {
-  padding: 16px;
 }

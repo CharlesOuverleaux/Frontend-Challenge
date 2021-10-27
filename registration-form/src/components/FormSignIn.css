@@ -12,7 +12,7 @@ label {
 input {
   margin-top: 16px;
   padding: 16px;
-  border: 2px solid #000000;
+  border: 2px solid black;
 }
 
 .form-validations {
@@ -25,7 +25,7 @@ p {
 }
 
 .form-submit {
-  background-color: #000000;
+  background-color: black;
   color: white;
   font-size: 18px;
   height: 52px;
