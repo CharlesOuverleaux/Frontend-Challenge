@@ -12,7 +12,7 @@ export default function Form() {
 
 
   return (
-    <div className='Form-Container'>
+    <div className='FormContainer'>
       { isSubmitted ? <SuccessMessage /> : <FormSignIn submitForm={submitForm}/> }
     </div>
   );

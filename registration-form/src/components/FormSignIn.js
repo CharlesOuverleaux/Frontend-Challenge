@@ -6,40 +6,42 @@ export default function FormSignIn({submitForm}) {
   const { values, handleChange, handleSubmit, validations} = useSignInForm();
 
   return (
-    <div className='FormSignIn'>
-      <form onSubmit={e => handleSubmit(e, submitForm)}>
-        <label htmlFor="email" className='form-email'>Email
+    <div>
+      <form id='FormSignIn' onSubmit={e => handleSubmit(e, submitForm)}>
+        <label htmlFor="email" className='FormLabel'>Email
           {/* added to highlight on label click */}
           <input
             type="email"
             name="email"
             placeholder="test@test.de"
             id="email"
+            className='FormInput'
             required
             values={values.email}
             onChange={handleChange}
           />
         </label>
-        <label htmlFor="password" className='form-password'>Password
+        <label htmlFor="password" className='FormLabel'>Password
           <input
             type="password"
             name="password"
             placeholder="********"
             id="password"
+            className='FormInput'
             required
             values={values.password}
             onChange={handleChange}
           />
         </label>
         {/* replace by favicons */}
-        <div className="form-validations">
-          <p>{validations.characterscount ? "✔️" : "❌"} 8+ characters</p>
-          <p>{validations.lowercase ? "✔️" : "❌"} lowercase letter</p>
-          <p>{validations.uppercase ? "✔️" : "❌"} uppercase letter</p>
-          <p>{validations.decimal ? "✔️" : "❌"} number</p>
-          <p>{validations.special ? "✔️" : "❌"} special character</p>
+        <div id="FormValidations">
+          <p className='FormValidation'>{validations.characterscount ? "✔️" : "❌"} 8+ characters</p>
+          <p className='FormValidation'>{validations.lowercase ? "✔️" : "❌"} lowercase letter</p>
+          <p className='FormValidation'>{validations.uppercase ? "✔️" : "❌"} uppercase letter</p>
+          <p className='FormValidation'>{validations.decimal ? "✔️" : "❌"} number</p>
+          <p className='FormValidation'>{validations.special ? "✔️" : "❌"} special character</p>
         </div>
-        <button className="form-submit" type="submit" values={values}>Submit</button>
+        <button id="FormSubmit" type="submit" values={values}>Submit</button>
       </form>
     </div>
   );

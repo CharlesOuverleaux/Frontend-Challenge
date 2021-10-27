@@ -3,7 +3,7 @@ import './SuccessMessage.css';
 
 export default function SuccessMessage() {
   return (
-    <div className='SuccessMessage'>
+    <div id='SuccessMessage'>
       <h2>Thank you! <br />You have signed in!</h2>
     </div>
   );
