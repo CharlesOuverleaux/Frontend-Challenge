@@ -16,6 +16,7 @@ export default function FormSignIn({submitForm}) {
             placeholder="test@test.de"
             id="email"
             className='FormInput'
+            data-testid="email-input"
             required
             values={values.email}
             onChange={handleChange}
@@ -28,6 +29,7 @@ export default function FormSignIn({submitForm}) {
             placeholder="********"
             id="password"
             className='FormInput'
+            data-testid='password-input'
             required
             values={values.password}
             onChange={handleChange}

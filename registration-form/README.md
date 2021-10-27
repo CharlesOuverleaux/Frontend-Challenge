@@ -58,6 +58,7 @@ React is one of the most popular framework/library. By using React to build this
 
 - Component adapts to: mobile(320px), tablet(768px) desktop(1024px)
 - Design requirements: https://github.com/project-a/frontend-coding-challenge
+⚠️ Tablet version: Email and Password field were inverted to optimize user experience ⚠️
 - Lighthouse accessibility: 100/100
 
 
